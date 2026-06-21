@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -144,10 +145,17 @@ export function Hero() {
                 width: "100%", height: "100%", borderRadius: "50%",
                 background: "var(--color-bg-dark)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 100, color: "rgba(167,139,250,0.15)", overflow: "hidden",
+                overflow: "hidden",
               }}
             >
-              <i className="fas fa-user-tie" />
+              <Image
+                src="/foto.jpg"
+                alt="Márcio Dias"
+                width={320}
+                height={320}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                priority
+              />
             </div>
           </div>
         </motion.div>
