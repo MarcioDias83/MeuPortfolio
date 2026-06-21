@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  --color-primary-dark: #5b21b6;
+  --color-primary-glow: rgba(124, 58, 237, 0.3);
+  --color-secondary: #06b6d4;
+  --color-secondary-light: #22d3ee;
+  --color-accent: #f59e0b;
+  --color-bg-dark: #07070d;
+  --color-bg-surface: #0c0c14;
+  --color-bg-card: #111122;
+  --color-bg-card-hover: #16162a;
+  --color-text-primary: #f1f1f7;
+  --color-text-secondary: #9494a8;
+  --color-text-muted: #5c5c70;
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-hover: rgba(167, 139, 250, 0.15);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-open-sans), sans-serif;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a, button, input, textarea, select { cursor: none; }
+
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #fff;
+}
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+.section { padding: 100px 0; position: relative; }
+.section-dark { background: var(--color-bg-dark); }
+
+.section-head {
+  text-align: center; margin-bottom: 56px;
+}
+.section-head span {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 3px;
+  color: var(--color-primary-light); font-weight: 600; display: block; margin-bottom: 8px;
+}
+.section-head h2 {
+  font-family: var(--font-josefin), sans-serif; font-size: 32px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary), var(--color-primary-light));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Gradient line under section headings */
+.section-head h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 2px;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 30px;
+  font-family: var(--font-josefin), sans-serif;
+  font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer; border: none; font-weight: 500;
+  position: relative; overflow: hidden;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.4);
+}
+.btn-primary:hover::before { transform: translateX(100%); }
+.btn-outline {
+  background: transparent; color: var(--color-primary-light);
+  border: 2px solid var(--color-primary-light);
+}
+.btn-outline::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  transform: scaleX(0); transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); z-index: -1;
+}
+.btn-outline:hover {
+  color: #fff; border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+}
+.btn-outline:hover::before { transform: scaleX(1); transform-origin: left; }
+.btn-glass {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--color-primary-light);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+}
+.btn-glass:hover {
+  background: rgba(124, 58, 237, 0.2);
+  transform: translateY(-3px);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.2);
+}
+
+#particle-canvas {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+}
+.section > .container { position: relative; z-index: 1; }
