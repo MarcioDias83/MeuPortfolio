@@ -8,34 +8,34 @@ export function Community() {
 
   const items = [
     {
-      icon: "fas fa-search",
-      title: { pt: "Analítico", en: "Analytical" },
-      desc: { pt: "Perfil orientado à solução de problemas com análise criteriosa", en: "Solution-oriented profile with careful analysis" },
-    },
-    {
-      icon: "fas fa-comments",
-      title: { pt: "Comunicação Clara", en: "Clear Communication" },
-      desc: { pt: "Facilidade para explicar conceitos técnicos de forma simples", en: "Ability to explain technical concepts simply" },
-    },
-    {
-      icon: "fas fa-brain",
-      title: { pt: "Aprendizado Contínuo", en: "Continuous Learning" },
-      desc: { pt: "Interesse constante em programação, automação e novas tecnologias", en: "Constant interest in programming, automation and new technologies" },
-    },
-    {
-      icon: "fas fa-handshake",
-      title: { pt: "Foco no Cliente", en: "Customer Focus" },
-      desc: { pt: "Experiência em atendimento e compreensão das necessidades do usuário", en: "Experience in service and understanding user needs" },
+      icon: "fas fa-heart",
+      title: { pt: "Apaixonado por Tecnologia", en: "Passionate About Tech" },
+      desc: { pt: "Sou um profissional apaixonado por tecnologia, aprendizado contínuo e resolução de problemas", en: "A professional passionate about technology, continuous learning, and problem-solving" },
     },
     {
       icon: "fas fa-users",
       title: { pt: "Trabalho em Equipe", en: "Teamwork" },
-      desc: { pt: "Colaboração eficiente em ambientes multidisciplinares", en: "Efficient collaboration in multidisciplinary environments" },
+      desc: { pt: "Facilidade para trabalhar em equipe e me adaptar rapidamente a novos ambientes e desafios", en: "Ease of teamwork and quick adaptation to new environments and challenges" },
     },
     {
-      icon: "fas fa-clock",
-      title: { pt: "Gestão de Tempo", en: "Time Management" },
-      desc: { pt: "Organização e priorização de demandas em ambientes dinâmicos", en: "Organization and prioritization in dynamic environments" },
+      icon: "fas fa-lightbulb",
+      title: { pt: "Tecnologia com Propósito", en: "Tech with Purpose" },
+      desc: { pt: "Acredito que a tecnologia deve gerar valor para pessoas e empresas, unindo conhecimento técnico, comunicação clara e foco em resultados", en: "I believe technology should create value for people and businesses, combining technical knowledge, clear communication, and results focus" },
+    },
+    {
+      icon: "fas fa-rocket",
+      title: { pt: "Orientado a Resultados", en: "Results-Driven" },
+      desc: { pt: "Meu objetivo é contribuir para projetos inovadores, crescer profissionalmente e ajudar organizações através da tecnologia", en: "My goal is to contribute to innovative projects, grow professionally, and help organizations through technology" },
+    },
+    {
+      icon: "fas fa-sync-alt",
+      title: { pt: "Aprendizado Contínuo", en: "Continuous Learning" },
+      desc: { pt: "Interesse constante em programação, automação e novas tecnologias para estar sempre atualizado", en: "Constant interest in programming, automation, and new technologies to stay up-to-date" },
+    },
+    {
+      icon: "fas fa-search",
+      title: { pt: "Resolução de Problemas", en: "Problem Solving" },
+      desc: { pt: "Perfil analítico e orientado à solução, identificando rapidamente falhas e propondo soluções eficientes", en: "Analytical and solution-oriented profile, quickly identifying failures and proposing efficient solutions" },
     },
   ];
 

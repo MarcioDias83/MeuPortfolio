@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 const achievements = [
+  { icon: "fas fa-headset", title: { pt: "Suporte Técnico e Atendimento", en: "Technical Support & Service" }, desc: { pt: "Experiência em suporte técnico e atendimento ao usuário em empresas de grande porte", en: "Experience in technical support and user service at large companies" } },
   { icon: "fas fa-graduation-cap", title: { pt: "Análise e Desenvolvimento de Sistemas", en: "Systems Analysis and Development" }, desc: { pt: "Formação superior em TI com visão sistêmica e técnica", en: "Higher education in IT with systemic and technical vision" } },
-  { icon: "fas fa-certificate", title: { pt: "Pós-Graduação em Tecnologia", en: "Post-Graduate in Technology" }, desc: { pt: "Especialização cursada ampliando conhecimentos técnicos", en: "Specialization completed, expanding technical knowledge" } },
-  { icon: "fas fa-language", title: { pt: "Inglês Técnico", en: "Technical English" }, desc: { pt: "Capacidade de leitura e compreensão de documentação técnica", en: "Ability to read and understand technical documentation" } },
-  { icon: "fas fa-headset", title: { pt: "Suporte N1/N2", en: "N1/N2 Support" }, desc: { pt: "Experiência em help desk e service desk corporativo", en: "Experience in corporate help desk and service desk" } },
-  { icon: "fas fa-users", title: { pt: "Comunicação e Negociação", en: "Communication & Negotiation" }, desc: { pt: "Habilidades desenvolvidas em vendas e relacionamento", en: "Skills developed in sales and relationship management" } },
-  { icon: "fas fa-sync-alt", title: { pt: "Adaptabilidade", en: "Adaptability" }, desc: { pt: "Facilidade para aprender novas ferramentas e tecnologias", en: "Ease of learning new tools and technologies" } },
+  { icon: "fab fa-linux", title: { pt: "Linux e Windows", en: "Linux & Windows" }, desc: { pt: "Conhecimento sólido em Linux (Mint/Ubuntu) e Windows 10/11", en: "Solid knowledge of Linux (Mint/Ubuntu) and Windows 10/11" } },
+  { icon: "fas fa-brain", title: { pt: "Aprendizado e Adaptação", en: "Learning & Adaptation" }, desc: { pt: "Facilidade de aprendizado e adaptação a novas ferramentas e tecnologias", en: "Ease of learning and adapting to new tools and technologies" } },
+  { icon: "fas fa-search", title: { pt: "Perfil Analítico", en: "Analytical Profile" }, desc: { pt: "Perfil analítico e orientado à solução de problemas", en: "Analytical profile focused on problem-solving" } },
+  { icon: "fas fa-comments", title: { pt: "Comunicação e Foco no Cliente", en: "Communication & Customer Focus" }, desc: { pt: "Comunicação clara e foco no cliente para compreender necessidades e entregar soluções", en: "Clear communication and customer focus to understand needs and deliver solutions" } },
+  { icon: "fas fa-sync-alt", title: { pt: "Programação e Automação", en: "Programming & Automation" }, desc: { pt: "Interesse contínuo em programação, automação e novas tecnologias", en: "Continuous interest in programming, automation and new technologies" } },
 ];
 
 export function Achievements() {

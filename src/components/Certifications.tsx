@@ -4,18 +4,24 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 const certs = [
-  { icon: "fab fa-aws", title: "AWS Certified", desc: "Solutions Architect" },
-  { icon: "fab fa-google", title: "Google Cloud", desc: "Associate Cloud Engineer" },
-  { icon: "fab fa-microsoft", title: "Azure AZ-900", desc: "Azure Fundamentals" },
-  { icon: "fas fa-shield-alt", title: "CompTIA Security+", desc: "Security Certification" },
-  { icon: "fab fa-docker", title: "Docker", desc: "Docker Certified Associate" },
-  { icon: "fab fa-linux", title: "Linux Professional", desc: "LPIC-1 Certified" },
-  { icon: "fas fa-database", title: "MongoDB", desc: "Associate Developer" },
-  { icon: "fas fa-project-diagram", title: "Scrum Master", desc: "Professional Scrum Master" },
+  { icon: "fas fa-graduation-cap", title: { pt: "Análise e Desenvolvimento de Sistemas", en: "Systems Analysis and Development" }, desc: { pt: "Formação Superior em TI", en: "Higher Education in IT" } },
+  { icon: "fas fa-certificate", title: { pt: "Pós-Graduação em Tecnologia", en: "Post-Graduate in Technology" }, desc: { pt: "Especialização na área de tecnologia", en: "Specialization in technology" } },
+  { icon: "fas fa-language", title: { pt: "Inglês Técnico", en: "Technical English" }, desc: { pt: "Leitura e compreensão de documentação técnica", en: "Reading and understanding technical documentation" } },
+  { icon: "fab fa-python", title: "Python", desc: { pt: "Em aprendizado contínuo", en: "Continuous learning" } },
+  { icon: "fab fa-git-alt", title: "Git & GitHub", desc: { pt: "Controle de versão e colaboração", en: "Version control and collaboration" } },
+  { icon: "fas fa-vial", title: { pt: "Qualidade de Software", en: "Software Quality" }, desc: { pt: "Testes funcionais e garantia da qualidade", en: "Functional testing and quality assurance" } },
+  { icon: "fab fa-docker", title: "Docker", desc: { pt: "Conhecimentos em conteinerização", en: "Containerization knowledge" } },
+  { icon: "fas fa-code", title: { pt: "Lógica de Programação", en: "Programming Logic" }, desc: { pt: "Fundamentos sólidos em desenvolvimento", en: "Solid development fundamentals" } },
 ];
 
 export function Certifications() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+
+  const desc = (d: string | { pt: string; en: string }) =>
+    typeof d === "string" ? d : d[lang];
+
+  const title = (d: string | { pt: string; en: string }) =>
+    typeof d === "string" ? d : d[lang];
 
   return (
     <section className="section" id="certifications">
@@ -33,7 +39,7 @@ export function Certifications() {
         <div className="certs-grid">
           {certs.map((c, i) => (
             <motion.div
-              key={c.title}
+              key={title(c.title)}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -57,12 +63,9 @@ export function Certifications() {
                 <i className={c.icon} />
               </div>
               <h6 style={{ fontFamily: "var(--font-josefin), sans-serif", fontSize: 14, marginBottom: 4 }}>
-                {c.title}
+                {title(c.title)}
               </h6>
-              <p style={{ fontSize: 12, color: "var(--color-text-secondary)", marginBottom: 12 }}>{c.desc}</p>
-              <a href="#" style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 600 }}>
-                {t.certs.verify}
-              </a>
+              <p style={{ fontSize: 12, color: "var(--color-text-secondary)", marginBottom: 12 }}>{desc(c.desc)}</p>
             </motion.div>
           ))}
         </div>

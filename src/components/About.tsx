@@ -46,6 +46,9 @@ export function About() {
             <p style={{ color: "var(--color-text-secondary)", fontWeight: 300, marginBottom: 16, fontSize: 15 }}>
               <span dangerouslySetInnerHTML={{ __html: a.p3 }} />
             </p>
+            <p style={{ color: "var(--color-text-secondary)", fontWeight: 300, marginBottom: 16, fontSize: 15 }}>
+              <span dangerouslySetInnerHTML={{ __html: a.p4 }} />
+            </p>
           </motion.div>
 
           <motion.div

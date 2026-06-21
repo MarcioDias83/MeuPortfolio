@@ -93,7 +93,8 @@ export function Contact() {
               {c.desc}
             </p>
 
-            <ContactItem icon="fas fa-envelope" label="Email" value="marcio@exemplo.com" />
+            <ContactItem icon="fas fa-phone-alt" label={lang === "pt" ? "Telefone" : "Phone"} value={c.phone} />
+            <ContactItem icon="fas fa-envelope" label="Email" value={c.emailAddr} />
             <ContactItem icon="fas fa-map-marker-alt" label={lang === "pt" ? "Localização" : "Location"} value={c.location} />
             <ContactItem icon="fab fa-linkedin-in" label="LinkedIn" value={c.linkedin} />
 
@@ -103,10 +104,17 @@ export function Contact() {
               viewport={{ once: true }}
               style={{ display: "flex", gap: 12, marginTop: 32 }}
             >
-              {["fab fa-github", "fab fa-linkedin-in", "fab fa-instagram", "fab fa-youtube"].map((icon) => (
+              {[
+                { icon: "fab fa-github", href: "https://github.com/MarcioDias83" },
+                { icon: "fab fa-linkedin-in", href: "#" },
+                { icon: "fab fa-instagram", href: "#" },
+                { icon: "fab fa-youtube", href: "#" },
+              ].map((s) => (
                 <motion.a
-                  key={icon}
-                  href="#"
+                  key={s.icon}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -3, background: "var(--color-primary)" }}
                   style={{
                     width: 44, height: 44, borderRadius: "50%",
@@ -117,7 +125,7 @@ export function Contact() {
                     transition: "0.3s",
                   }}
                 >
-                  <i className={icon} />
+                  <i className={s.icon} />
                 </motion.a>
               ))}
             </motion.div>
